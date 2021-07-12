@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+  <div class="col-12">
+    <h2 class="display-5">User Profile</h2>
+    <hr />
+  </div>
+  <div class="col-6" style="max-width: 350px">
+    <div class="card mb-3 w-100">
+      <!-- <div class="p-3"> -->
+      <img
+        [src]="profile.picture"
+        class="img-fluid img-thumbnail d-block mx-auto w-100 h-100"
+      />
+      <!-- </div> -->
+
+      <div class="card-body">
+        <h3 class="card-title">{{ profile.name }}</h3>
+        <p class="text-success mb-3 text-wrap" *ngIf="profile.email_verified">
+          <span class="me-2 text-decoration-underline">Email verified</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-check-lg text-success"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M13.485 1.431a1.473 1.473 0 0 1 2.104 2.062l-7.84 9.801a1.473 1.473 0 0 1-2.12.04L.431 8.138a1.473 1.473 0 0 1 2.084-2.083l4.111 4.112 6.82-8.69a.486.486 0 0 1 .04-.045z"
+            />
+          </svg>
+        </p>
+        <p class="text-danger mb-3" *ngIf="!profile.email_verified">
+          <span class="me-2 text-decoration-underline">Unverified email</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-exclamation-circle-fill text-danger"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+            />
+          </svg>
+        </p>
+        <p class="card-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dicet pro me
+          ipsa virtus nec dubitabit isti vestro beato M. Cum id quoque, ut
+          cupiebat, audivisset, evelli iussit eam, qua erat transfixus, hastam.
+        </p>
+        <p class="card-text">
+          Updated at:
+          <small class="text-muted">
+            {{ profile.updated_at | date: "medium" }}
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
